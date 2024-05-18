@@ -8,8 +8,14 @@ pub struct ServerConfig {
 }
 
 #[derive(Deserialize)]
+pub struct dbConfig{
+    pub database_url: String
+}
+
+#[derive(Deserialize)]
 pub struct Config {
-    pub server: ServerConfig
+    pub server: ServerConfig,
+    pub pg:deadpool_postgres::Config
 }
 
 impl Config {
